@@ -1,0 +1,66 @@
+﻿@{
+    // Пример массива с данными о пиццах
+    var pizzas = new[]
+    {
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Чиполини" },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Перегари" },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Нормальская" },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Четыре взрыва" },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Чезабретто" },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Гайморита" },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Нормисная" },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "ДоДик пицца фирменная" },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Purple hat" },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Snakehaze" },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Donkey house luxe" },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Афган from shef" },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Черный дьявол" },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "С сосиськами" },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Колбаски BBC" },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Сырая" },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Тувинская" },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Пахучая)" },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Подарок от тага" },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Чахлая" }
+    };
+
+    // Пример массива с данными о напитках
+    var drinks = new[]
+    {
+        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир" },
+        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки" },
+        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье" }
+    };
+}
+
+<div class="text-center">
+    <h1 class="display-1">Додик Пицца</h1>
+</div>
+
+<div class="row">
+    @foreach (var pizza in pizzas)
+    {
+        <div class="col-md-3 text-center">
+            <a href="/Menu/Index">
+                <img src="@pizza.ImageUrl" width="200" height="200" alt="@pizza.Name" />
+            </a>
+            <h3>@pizza.Name</h3>
+        </div>
+    }
+</div>
+
+<div class="text-center mt-5">
+    <h2>Наши напитки</h2>
+</div>
+
+<div class="row">
+    @foreach (var drink in drinks)
+    {
+        <div class="col-md-3 text-center">
+            <a href="/Menu/Index">
+                <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
+            </a>
+            <h3>@drink.Name</h3>
+        </div>
+    }
+</div>

@@ -1,0 +1,28 @@
+﻿@{
+    var drinks = new[]
+    {
+        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир" },
+        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки" },
+        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье" }
+    };
+}
+
+<div class="text-center">
+    <h1 class="display-1">Додик Пицца</h1>
+</div>
+
+<div class="text-center mt-5">
+    <h2>Наши напитки</h2>
+</div>
+
+<div class="row">
+    @foreach (var drink in drinks)
+    {
+        <div class="col-md-4 text-center">
+            <a href="/Menu/Index">
+                <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
+            </a>
+            <h3>@drink.Name</h3>
+        </div>
+    }
+</div>
