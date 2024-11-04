@@ -20,3 +20,58 @@ html {
 body {
   margin-bottom: 60px;
 }
+.hero-section {
+    background-image: url('/images/фон.jpg'); /* Путь к вашему изображению */
+    background-size: cover; /* Масштабировать изображение по размеру блока */
+    background-position: center; /* Центрировать изображение */
+    background-repeat: no-repeat; /* Не повторять изображение */
+    height: 400px; /* Высота секции, на ваше усмотрение */
+}
+body, html {
+    height: 100%; /* Задаем высоту страницы на 100% */
+    margin: 0; /* Убираем отступы */
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Минимальная высота контейнера на весь экран */
+}
+
+.text-center {
+    margin-top: 50px; /* Отступ сверху */
+}
+
+    .text-center h1 {
+        font-size: 5rem; /* Увеличенный размер заголовка */
+    }
+
+.btn-lg {
+    padding: 1rem 3rem; /* Увеличенные размеры кнопок */
+    font-size: 1.5rem; /* Увеличенный размер текста кнопки */
+}
+
+.card {
+    padding: 20px;
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.card-body {
+    font-size: 1.2rem; /* Увеличенный шрифт в карточках */
+}
+
+.container {
+    max-width: 1200px; /* Увеличиваем максимальную ширину контейнера */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+footer {
+    display: none; /* Скрываем footer */
+}

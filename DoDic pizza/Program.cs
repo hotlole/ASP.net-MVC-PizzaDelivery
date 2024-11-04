@@ -1,15 +1,32 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Dodic.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Добавляем службы в контейнер
 builder.Services.AddControllersWithViews();
+
+// Настройка контекста базы данных
+builder.Services.AddDbContext<ApplicationContext>(options =>
+     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Настройка аутентификации с использованием cookie
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login"; // Укажите путь к странице входа
+        options.LogoutPath = "/Account/Logout"; // Укажите путь к странице выхода
+    });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Настройка HTTP-запросов
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -18,6 +35,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Добавление аутентификации
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -31,6 +31,11 @@
         new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки" },
         new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье" }
     };
+
+    var combo = new[]
+    {
+       new { ImageUrl = ViewData["ComboImage1"], Name = "Леди Брат и Супер-Крот" }
+    };
 }
 
 <div class="text-center">
@@ -61,6 +66,18 @@
                 <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
             </a>
             <h3>@drink.Name</h3>
+        </div>
+    }
+</div>
+
+<div class="d-flex flex-column align-items-center">
+    @foreach (var i in combo)
+    {
+        <div class="w-100 text-center mb-4">
+            <a href="/Menu/Index">
+                <img src="@i.ImageUrl" width="500" height="500" alt="@i.Name" />
+            </a>
+            <h3>@i.Name</h3>
         </div>
     }
 </div>

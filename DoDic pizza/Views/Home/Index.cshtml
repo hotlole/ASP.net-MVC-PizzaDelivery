@@ -2,41 +2,40 @@
     ViewData["Title"] = "Додик-Пицца";
 }
 
-<div class="text-center">
-    <h1 class="display-1">Додик Пицца</h1>
-    <p><a href="https://github.com/hotlole" target="_blank">created by Hotlole</a>.</p>
-    <a href="/Menu/Index">
-        <img src="@ViewData["ImageUrl1"]" width="600" height="380" class="img-fluid rounded" />
-    </a>
-</div>
+<div class="full-screen">
+    <div class="text-center">
+        <h1 class="display-1">Додик Пицца</h1>
+        <p><a href="https://github.com/hotlole" target="_blank" class="custom-link">created by Hotlole</a>.</p>
+    </div>
 
-<div class="text-center mt-4">
-    <h2><a href="/Menu/Index" class="btn btn-success btn-lg">Перейдите в меню и сделайте заказ</a></h2>
-</div>
+    <div class="text-center mt-4">
+        <a href="/Menu/Main" class="btn btn-success btn-lg custom-btn">Посмотреть меню</a>
+    </div>
 
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-6 mb-5">
-            <div class="card shadow-sm bg-dark text-white h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Подписка на новости</h5>
-                    <p class="card-text">Подпишитесь на нашу рассылку и получайте самые свежие акции и промокоды.</p>
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Введите ваш email" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Подписаться</button>
-                    </form>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <div class="card shadow-sm bg-dark text-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Подписка на новости</h5>
+                        <p class="card-text">Подпишитесь на нашу рассылку и получайте самые свежие акции и промокоды.</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Введите ваш email" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Подписаться</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-6 mb-5">
-            <div class="card shadow-sm bg-dark text-white h-100">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Специальные предложения</h5>
-                    <p class="card-text">Не пропустите наши специальные предложения! Подпишитесь на уведомления.</p>
-                    <a href="/Specials" class="btn btn-warning">Узнать больше</a>
+            <div class="col-md-6 mb-5">
+                <div class="card shadow-sm bg-dark text-white h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Специальные предложения</h5>
+                        <p class="card-text">Не пропустите наши специальные предложения! Подпишитесь на уведомления.</p>
+                        <a href="/Specials" class="btn btn-warning">Узнать больше</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,9 +43,31 @@
 </div>
 
 <style>
-    body {
-        background-color: #f8f9fa;
+    /* Устанавливаем высоту страницы на 100% */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Избегаем прокрутки */
+        background-image: url('/images/фон.jpg'); /* Путь к вашему изображению */
+        background-size: cover; /* Масштабировать изображение по размеру страницы */
+        background-position: center; /* Центрировать изображение */
+        background-repeat: no-repeat; /* Не повторять изображение */
+        background-attachment: fixed; /* Фиксировать фон при прокрутке */
         font-family: Arial, sans-serif;
+    }
+
+    /* Устанавливаем высоту основного контейнера на 100% */
+    .full-screen {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Центрирование по вертикали */
+        align-items: center; /* Центрирование по горизонтали */
+    }
+
+    .container {
+        margin-top: 20px; /* Регулируем отступ */
     }
 
     .card {
@@ -65,6 +86,36 @@
         width: 100%;
     }
 
+    .custom-btn {
+        display: inline-block;
+        padding: 1rem 2.5rem; /* Увеличенные отступы */
+        font-size: 1.25rem;
+        border-radius: 50px; /* Скруглённые углы */
+        transition: background-color 0.3s, transform 0.3s; /* Плавный переход */
+    }
+
+        .custom-btn:hover {
+            background-color: #28a745; /* Более яркий зеленый при наведении */
+            transform: scale(1.05); /* Легкое увеличение при наведении */
+        }
+
+    /* Стили для заголовков */
+    h1, h2 {
+        color: wheat; /* Цвет заголовков */
+    }
+
+    /* Стиль ссылки под заголовок */
+    .custom-link {
+        color: wheat; /* Цвет как у заголовка */
+        text-decoration: none; /* Убираем подчеркивание */
+        transition: color 0.3s ease; /* Плавный переход цвета */
+    }
+
+        /* Изменение цвета ссылки при наведении */
+        .custom-link:hover {
+            color: #f8d7b0; /* Более светлый оттенок цвета при наведении */
+        }
+
     .lead {
         font-size: 1.5rem;
         font-weight: 300;
@@ -76,10 +127,6 @@
 
     .row > .col-md-6 {
         max-width: 500px; /* Увеличиваем ширину карточек */
-    }
-
-    h1, h2 {
-        color: #343a40; /* Цвет заголовков */
     }
 
     p {

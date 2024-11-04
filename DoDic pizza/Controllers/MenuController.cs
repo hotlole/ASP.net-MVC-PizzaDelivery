@@ -16,6 +16,7 @@ namespace DoDic_pizza.Controllers
             ViewData["DrinkImage1"] = "/images/фанки манки.jpg";
             ViewData["DrinkImage2"] = "/images/фанки манки.jpg";
             ViewData["DrinkImage3"] = "/images/фанки манки.jpg";
+            ViewData["ComboImage1"] = "/images/Комбо 1.jpg";
             return View();
         }
 
