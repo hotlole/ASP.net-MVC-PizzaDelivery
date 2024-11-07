@@ -2,39 +2,39 @@
     // Пример массива с данными о пиццах
     var pizzas = new[]
     {
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Чиполини" },
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Перегари" },
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Нормальская" },
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Четыре взрыва" },
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "Чезабретто" },
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "Гайморита" },
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "Нормисная" },
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "ДоДик пицца фирменная" },
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Purple hat" },
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Snakehaze" },
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Donkey house luxe" },
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Афган from shef" },
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "Черный дьявол" },
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "С сосиськами" },
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "Колбаски BBC" },
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "Сырая" },
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Тувинская" },
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Пахучая)" },
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Подарок от тага" },
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Чахлая" }
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Чиполини", Price = "480₽" },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Перегари", Price = "930₽" },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Нормальская", Price = "565₽"},
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Четыре взрыва", Price = "999₽"},
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Чезабретто", Price = "750₽"},
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Гайморита",Price = "1000₽"},
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Нормисная",Price = "480₽"},
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "ДоДик пицца фирменная", Price = "930₽"},
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Purple hat",Price = "565₽"},
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Snakehaze",Price = "980₽"},
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Donkey house luxe", Price = "750₽"},
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Афган from shef", Price = "1052₽"},
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Черный дьявол", Price = "483₽"},
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "С сосиськами", Price = "607₽"},
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Колбаски BBC", Price = "903₽"},
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Сырая",Price = "1110₽"},
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Тувинская", Price = "730₽"},
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Пахучая)", Price = "490₽"},
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Подарок от тага", Price = "875₽"},
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Чахлая",Price = "900₽"}
     };
 
     // Пример массива с данными о напитках
     var drinks = new[]
     {
-        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир" },
-        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки" },
-        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье" }
+        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир", Price = "100₽" },
+        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки", Price = "60₽" },
+        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье", Price = "30₽" }
     };
 
     var combo = new[]
     {
-       new { ImageUrl = ViewData["ComboImage1"], Name = "Леди Брат и Супер-Крот" }
+       new { ImageUrl = ViewData["ComboImage1"], Name = "Леди Брат и Супер-Крот", Price = "550₽" }
     };
 }
 
@@ -50,6 +50,7 @@
                 <img src="@pizza.ImageUrl" width="200" height="200" alt="@pizza.Name" />
             </a>
             <h3>@pizza.Name</h3>
+            <h3>@pizza.Price</h3>
         </div>
     }
 </div>
@@ -66,6 +67,7 @@
                 <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
             </a>
             <h3>@drink.Name</h3>
+            <h3>@drink.Price</h3>
         </div>
     }
 </div>
@@ -78,6 +80,7 @@
                 <img src="@i.ImageUrl" width="500" height="500" alt="@i.Name" />
             </a>
             <h3>@i.Name</h3>
+            <h3>@i.Price</h3>
         </div>
     }
 </div>

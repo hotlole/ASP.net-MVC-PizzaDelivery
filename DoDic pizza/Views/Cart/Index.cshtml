@@ -1,0 +1,40 @@
+﻿@model List<CartViewModel>
+
+<h2>Корзина</h2>
+
+@if (!Model.Any())
+{
+    <p>Ваша корзина пуста.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Quantity</td>
+                    <td>
+                        <form method="post" asp-action="RemoveFromCart" asp-controller="Cart">
+                            <input type="hidden" name="name" value="@item.Name" />
+                            <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+<a href="/" class="btn btn-primary">Продолжить покупки</a>

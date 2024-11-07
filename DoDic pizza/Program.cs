@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Dodic.DAL;
+using DoDic_pizza.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,13 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LogoutPath = "/Account/Logout"; // Укажите путь к странице выхода
     });
 
+// Добавление сессий
+builder.Services.AddSession();
+
+// Добавление CartService и HttpContextAccessor
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<CartService>();
+
 var app = builder.Build();
 
 // Настройка HTTP-запросов
@@ -35,7 +43,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Добавление аутентификации
+// Добавление аутентификации и сессий
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 

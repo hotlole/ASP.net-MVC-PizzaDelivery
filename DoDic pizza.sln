@@ -9,11 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{F1F48B6D-C5D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{EA1B1FBA-C2C4-4A20-9D6A-E2ACE15ACE95}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{0074C90A-7441-4811-9E38-CBB05BEAF7C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dodic.DAL", "Dodic.DAL\Dodic.DAL.csproj", "{E7A3A25C-F523-40E2-B9D8-59A7EF8D3067}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodic.DAL", "Dodic.DAL\Dodic.DAL.csproj", "{E7A3A25C-F523-40E2-B9D8-59A7EF8D3067}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodic.Domain", "Dodic.Domain\Dodic.Domain.csproj", "{20FE50CA-2BB2-446A-A979-EB174FD747CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dodic.Domain", "Dodic.Domain\Dodic.Domain.csproj", "{20FE50CA-2BB2-446A-A979-EB174FD747CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
