@@ -2,39 +2,40 @@
     // Пример массива с данными о пиццах
     var pizzas = new[]
     {
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Чиполини", Price = "480₽" },
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Перегари", Price = "930₽" },
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Нормальская", Price = "565₽"},
-        new { ImageUrl = ViewData["ImageUrl1"], Name = "Четыре взрыва", Price = "999₽"},
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "Чезабретто", Price = "750₽"},
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "Гайморита",Price = "1000₽"},
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "Нормисная",Price = "480₽"},
-        new { ImageUrl = ViewData["ImageUrl2"], Name = "ДоДик пицца фирменная", Price = "930₽"},
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Purple hat",Price = "565₽"},
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Snakehaze",Price = "980₽"},
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Donkey house luxe", Price = "750₽"},
-        new { ImageUrl = ViewData["ImageUrl3"], Name = "Афган from shef", Price = "1052₽"},
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "Черный дьявол", Price = "483₽"},
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "С сосиськами", Price = "607₽"},
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "Колбаски BBC", Price = "903₽"},
-        new { ImageUrl = ViewData["ImageUrl4"], Name = "Сырая",Price = "1110₽"},
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Тувинская", Price = "730₽"},
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Пахучая)", Price = "490₽"},
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Подарок от тага", Price = "875₽"},
-        new { ImageUrl = ViewData["ImageUrl5"], Name = "Чахлая",Price = "900₽"}
+
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Чиполини", Price = "480", Description = "Классическая пицца с луком и сыром моцарелла." },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Перегари", Price = "930", Description = "Острая пицца с перцем халапеньо и чеддером." },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Нормальская", Price = "565", Description = "Пицца с ветчиной, грибами и сливочным соусом." },
+        new { ImageUrl = ViewData["ImageUrl1"], Name = "Четыре взрыва", Price = "999", Description = "Пицца с четырьмя видами сыра." },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Чезабретто", Price = "750", Description = "Сочная пицца с беконом и свежими овощами." },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Гайморита", Price = "1000", Description = "Пицца с двойной порцией сыра и специями." },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "Нормисная", Price = "480", Description = "Легкая пицца с томатами и базиликом." },
+        new { ImageUrl = ViewData["ImageUrl2"], Name = "ДоДик пицца", Price = "930", Description = "Фирменная пицца с уникальным вкусом." },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Purple hat", Price = "565", Description = "Пицца с яркими овощами и сливочным соусом." },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Snakehaze", Price = "980", Description = "Экзотическая пицца с копченым мясом и острым соусом." },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Donkey house luxe", Price = "750", Description = "Премиум пицца с трюфельным маслом и прошутто." },
+        new { ImageUrl = ViewData["ImageUrl3"], Name = "Афган from shef", Price = "1052", Description = "Пикантная пицца с острым мясом и овощами." },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Черный дьявол", Price = "483", Description = "Черная пицца с морепродуктами и чернилами каракатицы." },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "С сосиськами", Price = "607", Description = "Классическая пицца с сосисками и томатным соусом." },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Колбаски BBC", Price = "903", Description = "Пицца с колбасками, сыром и BBQ соусом." },
+        new { ImageUrl = ViewData["ImageUrl4"], Name = "Сырая", Price = "1110", Description = "Пицца с изобилием сыра для настоящих гурманов." },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Тувинская", Price = "730", Description = "Региональная пицца с бараниной и специями." },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Пахучая)", Price = "490", Description = "Пицца с пикантным сыром и свежей зеленью." },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Подарок от тага", Price = "875", Description = "Фирменная пицца с необычным сочетанием ингредиентов." },
+        new { ImageUrl = ViewData["ImageUrl5"], Name = "Чахлая", Price = "900", Description = "Легкая пицца с овощами и легким сыром." }
     };
 
     // Пример массива с данными о напитках
     var drinks = new[]
     {
-        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир", Price = "100₽" },
-        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки", Price = "60₽" },
-        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье", Price = "30₽" }
+        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир", Price = "100",  Description = "Чай, заваренный особым способом" },
+        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки", Price = "60", Description = "Побалуйте себя любимым напитком" },
+        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье", Price = "30", Description = "Поставит на ноги любого" }
     };
 
     var combo = new[]
     {
-       new { ImageUrl = ViewData["ComboImage1"], Name = "Леди Брат и Супер-Крот", Price = "550₽" }
+         new { ImageUrl = ViewData["ComboImage1"], Name = "Леди Брат и Супер-Крот", Price = "550", Description = "Встречайте любых героев!"  }
     };
 }
 
@@ -46,11 +47,13 @@
     @foreach (var pizza in pizzas)
     {
         <div class="col-md-3 text-center">
-            <a href="/Menu/Index">
-                <img src="@pizza.ImageUrl" width="200" height="200" alt="@pizza.Name" />
-            </a>
+            <img src="@pizza.ImageUrl" width="200" height="200" alt="@pizza.Name" />
             <h3>@pizza.Name</h3>
-            <h3>@pizza.Price</h3>
+            <h4>@pizza.Price</h4>
+            <!-- Кнопка для открытия модального окна -->
+            <button class="btn btn-info" onclick="openModal('@pizza.Name', '@pizza.ImageUrl', '@pizza.Price', '@pizza.Description')">
+                Выбрать
+            </button>
         </div>
     }
 </div>
@@ -63,24 +66,76 @@
     @foreach (var drink in drinks)
     {
         <div class="col-md-3 text-center">
-            <a href="/Menu/Index">
-                <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
-            </a>
+            <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
             <h3>@drink.Name</h3>
-            <h3>@drink.Price</h3>
+            <h4>@drink.Price</h4>
+            <!-- Кнопка для открытия модального окна -->
+            <button class="btn btn-info" onclick="openModal('@drink.Name', '@drink.ImageUrl', '@drink.Price', '@drink.Description')">
+                Выбрать
+            </button>
         </div>
     }
 </div>
 
-<div class="d-flex flex-column align-items-center">
+<div class="text-center mt-5">
+    <h2>Комбо</h2>
+</div>
+
+<div class="row">
     @foreach (var i in combo)
     {
-        <div class="w-100 text-center mb-4">
-            <a href="/Menu/Index">
-                <img src="@i.ImageUrl" width="500" height="500" alt="@i.Name" />
-            </a>
+        <div class="col-md-3 text-center">
+            <img src="@i.ImageUrl" width="600" height="600" alt="@i.Name" />
             <h3>@i.Name</h3>
-            <h3>@i.Price</h3>
+            <h4>@i.Price</h4>
+            <!-- Кнопка для открытия модального окна -->
+            <button class="btn btn-info" onclick="openModal('@i.Name', '@i.ImageUrl', '@i.Price', '@i.Description')">
+                Выбрать
+            </button>
         </div>
     }
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Информация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" width="300" height="300" alt="Пицца изображение" />
+                <p id="modalDescription"></p>
+                <p id="modalPrice"></p>
+            </div>
+            <div class="modal-footer">
+                <!-- Форма добавления в корзину -->
+                <form method="post" asp-action="AddToCart" asp-controller="Cart">
+                    <input type="hidden" id="hiddenName" name="name" value="" />
+                    <input type="hidden" id="hiddenPrice" name="price" value="" />
+                    <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openModal(name, imageUrl, price, description) {
+        // Устанавливаем данные в модальное окно
+        document.getElementById('modalTitle').textContent = name;
+        document.getElementById('modalImage').src = imageUrl;
+        document.getElementById('modalDescription').textContent = description;
+        document.getElementById('modalPrice').textContent = "Цена: " + price;
+
+        // Также устанавливаем данные в скрытые поля формы для корзины
+        document.getElementById('hiddenName').value = name;
+        document.getElementById('hiddenPrice').value = price;
+
+        // Открываем модальное окно
+        var modal = new bootstrap.Modal(document.getElementById('modal'));
+        modal.show();
+    }
+</script>
+

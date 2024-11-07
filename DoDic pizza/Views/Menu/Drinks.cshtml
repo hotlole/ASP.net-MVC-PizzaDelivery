@@ -1,9 +1,9 @@
 ﻿@{
     var drinks = new[]
     {
-        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир" },
-        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки" },
-        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье" }
+        new { ImageUrl = ViewData["DrinkImage1"], Name = "Чифир", Price = "100",  Description = "Чай, заваренный особым способом" },
+        new { ImageUrl = ViewData["DrinkImage2"], Name = "Фанки Манки", Price = "60", Description = "Побалуйте себя любимым напитком" },
+        new { ImageUrl = ViewData["DrinkImage3"], Name = "Целебное снадобье", Price = "30", Description = "Поставит на ноги любого" }
     };
 }
 
@@ -18,11 +18,57 @@
 <div class="row">
     @foreach (var drink in drinks)
     {
-        <div class="col-md-4 text-center">
-            <a href="/Menu/Index">
-                <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
-            </a>
+        <div class="col-md-3 text-center">
+            <img src="@drink.ImageUrl" width="200" height="200" alt="@drink.Name" />
             <h3>@drink.Name</h3>
+            <h4>@drink.Price</h4>
+            <!-- Кнопка для открытия модального окна -->
+            <button class="btn btn-info" onclick="openModal('@drink.Name', '@drink.ImageUrl', '@drink.Price', '@drink.Description')">
+                Выбрать
+            </button>
         </div>
     }
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Информация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" width="300" height="300" alt="Пицца изображение" />
+                <p id="modalDescription"></p>
+                <p id="modalPrice"></p>
+            </div>
+            <div class="modal-footer">
+                <!-- Форма добавления в корзину -->
+                <form method="post" asp-action="AddToCart" asp-controller="Cart">
+                    <input type="hidden" id="hiddenName" name="name" value="" />
+                    <input type="hidden" id="hiddenPrice" name="price" value="" />
+                    <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openModal(name, imageUrl, price, description) {
+        // Устанавливаем данные в модальное окно
+        document.getElementById('modalTitle').textContent = name;
+        document.getElementById('modalImage').src = imageUrl;
+        document.getElementById('modalDescription').textContent = description;
+        document.getElementById('modalPrice').textContent = "Цена: " + price;
+
+        // Также устанавливаем данные в скрытые поля формы для корзины
+        document.getElementById('hiddenName').value = name;
+        document.getElementById('hiddenPrice').value = price;
+
+        // Открываем модальное окно
+        var modal = new bootstrap.Modal(document.getElementById('modal'));
+        modal.show();
+    }
+</script>
