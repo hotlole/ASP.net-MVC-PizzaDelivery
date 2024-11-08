@@ -45,5 +45,8 @@ namespace DoDic_pizza.Service
 			cart.RemoveAll(x => x.Name == name);
 			Session.SetString("Cart", JsonConvert.SerializeObject(cart));
 		}
-	}
+
+       
+
+    }
 }

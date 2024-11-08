@@ -1,0 +1,33 @@
+﻿@model Order
+
+<h2>Спасибо за ваш заказ!</h2>
+
+<p>Номер заказа: @Model.Id</p>
+<p>Дата заказа: @Model.OrderDate.ToString("dd.MM.yyyy HH:mm")</p>
+<p>Сумма: @Model.TotalAmount ₽</p>
+<p>Имя клиента: @Model.Name</p>
+<p>Адрес доставки: @Model.Address</p>
+<p>Телефон: @Model.Phone</p>
+
+<h3>Ваши товары:</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Количество</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderItems)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/" class="btn btn-primary">Вернуться на главную</a>

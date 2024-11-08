@@ -6,11 +6,13 @@ namespace Dodic.DAL
     public class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
-            /*Database.EnsureDeleted();*/
+            Database.EnsureDeleted();
             Database.EnsureCreated();
             
         }
