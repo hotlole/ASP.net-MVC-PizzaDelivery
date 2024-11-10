@@ -31,26 +31,23 @@ namespace DoDic_pizza.Controllers
         [HttpPost]
         public IActionResult CreateOrder(OrderViewModel orderViewModel)
         {
-            var cart = _cartService.GetCart(); // получаем корзину
+            var cart = _cartService.GetCart();
 
-            // Проверяем, что корзина не пуста
             if (!cart.Any())
             {
                 TempData["Error"] = "Ваша корзина пуста.";
-                return RedirectToAction("Index", "Cart"); // Перенаправляем, если корзина пуста
+                return RedirectToAction("Index", "Cart");
             }
 
-            // Если модель невалидна, возвращаем пользователя обратно на форму
             if (!ModelState.IsValid)
             {
                 return View(orderViewModel);
             }
 
-            // Создаем заказ
             var order = new Order
             {
-                UserId = User.Identity.Name, // или User.FindFirstValue(ClaimTypes.NameIdentifier)
-                OrderDate = DateTime.Now.ToUniversalTime(), // Преобразуем в UTC
+                UserId = User.Identity.Name,
+                OrderDate = DateTime.UtcNow,
                 TotalAmount = cart.Sum(c => decimal.Parse(c.Price) * c.Quantity),
                 Status = "В обработке",
                 Name = orderViewModel.Name,
@@ -64,32 +61,29 @@ namespace DoDic_pizza.Controllers
                 }).ToList()
             };
 
-            // Сохраняем заказ в базе данных
             _context.Orders.Add(order);
             _context.SaveChanges();
 
-            // После создания заказа редиректим на страницу подтверждения с ID заказа
             return RedirectToAction("OrderConfirmation", new { orderId = order.Id });
         }
+
 
         // Отображение страницы подтверждения заказа
         [HttpGet]
         public IActionResult OrderConfirmation(int orderId)
         {
-            // Получаем заказ по ID с подгрузкой элементов заказа
             var order = _context.Orders
-                .Include(o => o.OrderItems) // подгружаем элементы заказа
+                .Include(o => o.OrderItems)
                 .FirstOrDefault(o => o.Id == orderId);
 
-            // Если заказ не найден, показываем ошибку
             if (order == null)
             {
                 TempData["Error"] = "Заказ не найден.";
-                return RedirectToAction("Index", "Home"); // Редирект на главную страницу
+                return RedirectToAction("Index", "Home");
             }
 
-            // Если заказ найден, возвращаем представление с заказом
             return View(order);
         }
+
     }
 }
